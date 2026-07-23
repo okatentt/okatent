@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recambios y Piezas de Repuesto | OKATENT</title>
+  <meta name="description" content="Piezas de repuesto originales para carpas plegables Okatent Cebú. Crucetas, varillas, perfiles, juntas y tornillería. Envío a toda España.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231A2B5C'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='white'>O</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-bg: #F0F4F8;
+      --color-surface: #FFFFFF;
+      --color-primary: #1A2B5C;
+      --color-accent: #2F5FA8;
+      --color-accent-light: #B8D4EE;
+      --color-accent-mid: #5B8DD9;
+      --color-dark: #0D1A3A;
+      --color-text-muted: #4A5C7A;
+      --color-highlight: #F2A93B;
+      --font-heading: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-label: 'DM Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition-fast: 0.2s ease;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.11);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-primary); line-height: 1.6; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+
+    @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageIn 0.4s ease both; }
+
+    /* NAV */
+    #nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(240,244,248,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(26,43,92,.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 clamp(1rem,4vw,3rem); max-width: 1280px; margin: 0 auto; gap: 2rem; }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-primary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: .88rem; color: var(--color-text-muted); transition: color var(--transition-fast); }
+    .nav-links a:hover { color: var(--color-primary); }
+    .nav-cta { background: var(--color-highlight); color: var(--color-primary); font-weight: 700; font-size: .85rem; padding: 10px 22px; border-radius: 100px; white-space: nowrap; transition: background var(--transition-fast); }
+    .nav-cta:hover { background: #e09a2a; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 55%, var(--color-accent) 100%);
+      padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem);
+    }
+    .hero-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+    .hero-label { font-family: var(--font-label); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: var(--color-highlight); margin-bottom: .75rem; display: block; }
+    .hero-h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3.2rem); color: white; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-desc { font-size: .95rem; color: var(--color-accent-light); line-height: 1.75; max-width: 520px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 100px; padding: .4rem 1rem; font-size: .78rem; color: rgba(255,255,255,.8); margin-top: 1.5rem; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--color-accent-mid);
+      color: white;
+      font-family: var(--font-label);
+      font-size: .68rem;
+      letter-spacing: .1em;
+      padding: .6rem clamp(1rem,4vw,3rem);
+      display: flex; gap: 2rem; align-items: center; justify-content: center; flex-wrap: wrap;
+    }
+
+    /* MAIN LAYOUT */
+    .main { max-width: 1280px; margin: 0 auto; padding: 3rem clamp(1rem,4vw,3rem) 5rem; }
+
+    /* MODEL SELECT */
+    .model-select-section { margin-bottom: 3rem; }
+    .model-select-title { font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-primary); margin-bottom: .35rem; }
+    .model-select-sub { font-size: .9rem; color: var(--color-text-muted); margin-bottom: 1.5rem; }
+    .model-select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .model-select-card {
+      background: white;
+      border: 2px solid rgba(26,43,92,.12);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+      text-align: left;
+    }
+    .model-select-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+    .model-select-card.active { border-color: var(--color-accent); background: rgba(47,95,168,.05); box-shadow: var(--shadow-sm); }
+    .model-select-card-name { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-primary); margin-bottom: .3rem; }
+    .model-select-card-desc { font-size: .85rem; color: var(--color-text-muted); line-height: 1.5; }
+    .model-select-card-tag {
+      display: inline-block; font-family: var(--font-label); font-size: .65rem; letter-spacing: .1em;
+      text-transform: uppercase; background: var(--color-accent-light); color: var(--color-primary);
+      padding: .25rem .65rem; border-radius: 100px; margin-top: .6rem;
+    }
+    .model-select-card.active .model-select-card-tag { background: var(--color-accent); color: white; }
+    .model-pending { text-align: center; padding: 4rem 1rem; color: var(--color-text-muted); }
+    .model-pending h3 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: .5rem; color: var(--color-primary); }
+    .product-price-tbd { font-family: var(--font-label); font-size: .85rem; color: var(--color-text-muted); }
+    .filter-btn.size-hidden { display: none; }
+
+    /* FILTERS */
+    .filters-bar {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(26,43,92,.1);
+    }
+    .filters-label { font-family: var(--font-label); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-muted); margin-right: .5rem; }
+    .filter-btn {
+      padding: .45rem 1.1rem;
+      border: 1.5px solid rgba(26,43,92,.18);
+      border-radius: 100px;
+      font-size: .82rem;
+      color: var(--color-text-muted);
+      background: white;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+    .filter-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .filter-btn.active { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+
+    /* SEARCH */
+    .search-wrap { position: relative; flex: 1; max-width: 280px; margin-left: auto; }
+    .search-input {
+      width: 100%; padding: .5rem 1rem .5rem 2.2rem;
+      border: 1.5px solid rgba(26,43,92,.15);
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: .85rem;
+      color: var(--color-primary);
+      outline: none;
+      background: white;
+      transition: border-color var(--transition-fast);
+    }
+    .search-input:focus { border-color: var(--color-accent); }
+    .search-icon { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: .9rem; pointer-events: none; }
+
+    /* RESULTS COUNT */
+    .results-count { font-family: var(--font-label); font-size: .68rem; letter-spacing: .08em; color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+    /* PRODUCT GRID */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .product-card {
+      background: white;
+      border: 1.5px solid rgba(26,43,92,.09);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: box-shadow var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+    }
+    .product-card.hidden { display: none; }
+
+    .product-img {
+      height: 180px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(26,43,92,.06);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .product-img img { width: 100%; height: 100%; object-fit: contain; padding: .75rem; }
+    .product-img-placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; height: 100%;
+    }
+    .product-img-placeholder svg { opacity: .25; }
+
+    .product-body { padding: 1rem 1.1rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .product-ref { font-family: var(--font-label); font-size: .62rem; letter-spacing: .1em; color: var(--color-text-muted); margin-bottom: .3rem; }
+    .product-name { font-weight: 600; font-size: .92rem; color: var(--color-primary); margin-bottom: .3rem; line-height: 1.3; }
+    .product-size-tag {
+      display: inline-block;
+      font-family: var(--font-label); font-size: .6rem; letter-spacing: .08em;
+      background: var(--color-accent-light);
+      color: var(--color-primary);
+      padding: .2rem .55rem;
+      border-radius: 100px;
+      margin-bottom: .6rem;
+    }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: .75rem; border-top: 1px solid rgba(26,43,92,.07); }
+    .product-price { font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); }
+    .product-buy {
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      padding: .45rem 1rem;
+      border-radius: 100px;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    .product-buy:hover { background: var(--color-accent); }
+
+    /* QTY CONTROLS */
+    .qty-controls { display: flex; align-items: center; gap: .35rem; }
+    .qty-btn {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1.5px solid var(--color-accent);
+      background: white; color: var(--color-accent);
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, color .15s;
+      line-height: 1;
+    }
+    .qty-btn:hover { background: var(--color-accent); color: white; }
+    .qty-btn.minus { border-color: rgba(26,43,92,.3); color: var(--color-text-muted); }
+    .qty-btn.minus:hover { background: rgba(26,43,92,.08); color: var(--color-primary); }
+    .qty-num { font-family: var(--font-label); font-size: .9rem; font-weight: 700; min-width: 22px; text-align: center; color: var(--color-primary); }
+
+    /* CART FAB */
+    #cartFab {
+      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      padding: .85rem 1.75rem;
+      font-size: .9rem; font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font-body);
+      box-shadow: 0 10px 32px rgba(13,26,58,.35);
+      display: none;
+      align-items: center; gap: .85rem;
+      z-index: 300;
+      white-space: nowrap;
+      transition: transform .2s, box-shadow .2s;
+    }
+    #cartFab:hover { transform: translateX(-50%) translateY(-2px); box-shadow: 0 16px 40px rgba(13,26,58,.4); }
+    #cartFab .fab-label { opacity: .75; font-weight: 400; font-size: .8rem; }
+    #cartFab .fab-badge {
+      background: white; color: var(--color-primary);
+      border-radius: 100px; padding: .2rem .6rem;
+      font-size: .78rem; font-weight: 800;
+    }
+    #cartFab .fab-total { font-family: var(--font-heading); font-size: 1.05rem; }
+
+    /* CART PANEL */
+    #cartPanel {
+      position: fixed; right: 0; top: 0; bottom: 0; width: 400px; max-width: 100vw;
+      background: white; z-index: 2001;
+      box-shadow: -20px 0 60px rgba(13,26,58,.2);
+      transform: translateX(100%);
+      transition: transform .4s cubic-bezier(.16,1,.3,1);
+      display: flex; flex-direction: column;
+    }
+    #cartPanel.open { transform: translateX(0); }
+    .cart-panel-head { padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid rgba(26,43,92,.08); display: flex; align-items: center; justify-content: space-between; }
+    .cart-panel-head h3 { font-family: var(--font-heading); font-size: 1.4rem; }
+    .cart-close { background: rgba(26,43,92,.08); border: none; border-radius: 50%; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; }
+    .cart-panel-items { flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
+    .cart-row { display: flex; align-items: center; gap: .75rem; padding: .75rem 0; border-bottom: 1px solid rgba(26,43,92,.06); }
+    .cart-row-info { flex: 1; min-width: 0; }
+    .cart-row-name { font-size: .82rem; font-weight: 600; line-height: 1.3; }
+    .cart-row-price { font-size: .75rem; color: var(--color-text-muted); }
+    .cart-row-subtotal { font-family: var(--font-heading); font-size: .95rem; color: var(--color-primary); white-space: nowrap; }
+    .cart-panel-footer { padding: 1.25rem 1.5rem; border-top: 1px solid rgba(26,43,92,.08); }
+    .cart-total-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; }
+    .cart-total-label { font-size: .85rem; color: var(--color-text-muted); }
+    .cart-total-amount { font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-primary); }
+    .cart-checkout-btns { display: flex; flex-direction: column; gap: .6rem; }
+    .btn-whatsapp {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      background: #25D366; color: white;
+      padding: .9rem; border-radius: 50px;
+      font-weight: 700; font-size: .95rem;
+      cursor: pointer; border: none; font-family: var(--font-body);
+      transition: filter .2s;
+    }
+    .btn-whatsapp:hover { filter: brightness(1.08); }
+    .btn-email {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      background: var(--color-bg); color: var(--color-primary);
+      padding: .75rem; border-radius: 50px;
+      font-weight: 600; font-size: .85rem;
+      cursor: pointer; border: 1.5px solid rgba(26,43,92,.15); font-family: var(--font-body);
+      transition: border-color .2s;
+    }
+    .btn-email:hover { border-color: var(--color-accent); }
+    .cart-empty { text-align: center; padding: 3rem 1rem; color: var(--color-text-muted); }
+    .cart-empty p { margin-top: .5rem; font-size: .88rem; }
+
+    /* EMPTY STATE */
+    .empty-state { text-align: center; padding: 4rem 1rem; color: var(--color-text-muted); display: none; }
+    .empty-state h3 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: .5rem; color: var(--color-primary); }
+
+    /* CONTACT CTA */
+    .contact-cta {
+      margin-top: 4rem;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .contact-cta h2 { font-family: var(--font-heading); font-size: 1.8rem; color: white; }
+    .contact-cta p { color: var(--color-accent-light); font-size: .9rem; margin-top: .5rem; }
+    .contact-cta a {
+      background: white;
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 32px;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+      display: inline-block;
+    }
+    .contact-cta a:hover { box-shadow: 0 8px 24px rgba(0,0,0,.2); transform: translateY(-2px); }
+
+    /* CART TOAST */
+    .cart-toast {
+      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(120%);
+      background: var(--color-primary);
+      color: white;
+      padding: .9rem 2rem;
+      border-radius: 100px;
+      font-size: .9rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-md);
+      transition: transform .35s cubic-bezier(.16,1,.3,1);
+      z-index: 500;
+      white-space: nowrap;
+    }
+    .cart-toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* PRODUCT DETAIL MODAL */
+    #pdModal {
+      position: fixed; inset: 0; z-index: 3000;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    #pdModal.open { opacity: 1; pointer-events: all; }
+    #pdModal .pd-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(13,26,58,.55); backdrop-filter: blur(6px);
+    }
+    .pd-box {
+      position: relative; z-index: 1;
+      background: white; border-radius: var(--radius-lg);
+      width: min(900px, 95vw); max-height: 90vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(13,26,58,.3);
+      transform: translateY(20px);
+      transition: transform .3s ease;
+    }
+    #pdModal.open .pd-box { transform: translateY(0); }
+    .pd-gallery {
+      background: var(--color-bg);
+      display: flex; flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+    .pd-main-img {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      min-height: 220px;
+    }
+    .pd-main-img img { max-height: 280px; max-width: 100%; object-fit: contain; }
+    .pd-thumbs { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .pd-thumb {
+      width: 60px; height: 60px; border-radius: 8px;
+      border: 2px solid transparent; cursor: pointer;
+      overflow: hidden; background: white;
+      transition: border-color .15s;
+    }
+    .pd-thumb:hover, .pd-thumb.active { border-color: var(--color-accent); }
+    .pd-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+    .pd-info {
+      padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      overflow-y: auto;
+    }
+    .pd-close {
+      position: absolute; top: 1rem; right: 1rem; z-index: 2;
+      background: rgba(26,43,92,.08); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    .pd-close:hover { background: rgba(26,43,92,.15); }
+    .pd-ref { font-family: var(--font-label); font-size: .65rem; letter-spacing: .12em; color: var(--color-accent); text-transform: uppercase; }
+    .pd-name { font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.2; color: var(--color-primary); }
+    .pd-size-tag { display: inline-block; font-family: var(--font-label); font-size: .6rem; letter-spacing: .08em; background: var(--color-accent-light); color: var(--color-primary); padding: .25rem .6rem; border-radius: 100px; }
+    .pd-desc { font-size: .88rem; color: var(--color-text-muted); line-height: 1.7; }
+    .pd-price-row { display: flex; align-items: baseline; gap: .75rem; }
+    .pd-price { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-primary); }
+    .pd-price-note { font-size: .78rem; color: var(--color-text-muted); }
+    .pd-qty-row { display: flex; align-items: center; gap: 1rem; }
+    .pd-qty-label { font-size: .8rem; color: var(--color-text-muted); font-weight: 500; }
+    .pd-qty-ctrl { display: flex; align-items: center; gap: .5rem; }
+    .pd-qty-btn {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1.5px solid rgba(26,43,92,.2);
+      background: white; font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--color-primary);
+      transition: border-color .15s, background .15s;
+    }
+    .pd-qty-btn:hover { border-color: var(--color-accent); background: var(--color-accent); color: white; }
+    .pd-qty-num { font-family: var(--font-label); font-size: 1rem; min-width: 28px; text-align: center; font-weight: 700; }
+    .pd-add-btn {
+      width: 100%; padding: .95rem;
+      background: var(--color-primary); color: white;
+      border: none; border-radius: 50px;
+      font-size: .95rem; font-weight: 700; cursor: pointer;
+      font-family: var(--font-body);
+      transition: background .2s;
+    }
+    .pd-add-btn:hover { background: var(--color-accent); }
+    .pd-back-btn {
+      width: 100%; padding: .75rem;
+      background: transparent; color: var(--color-text-muted);
+      border: 1.5px solid rgba(26,43,92,.15); border-radius: 50px;
+      font-size: .85rem; cursor: pointer;
+      font-family: var(--font-body);
+      transition: border-color .2s;
+    }
+    .pd-back-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    @media (max-width: 640px) {
+      .pd-box { grid-template-columns: 1fr; }
+      .pd-gallery { padding: 1rem; }
+      .pd-info { padding: 1.25rem; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .filters-bar { gap: .6rem; }
+      .search-wrap { max-width: 100%; margin-left: 0; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+      .contact-cta { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="okatent-carpas.html" class="nav-logo">
+      <span class="nav-logo-main">OKATENT</span>
+      <span class="nav-logo-sub">Carpas Plegables</span>
+    </a>
+    <ul class="nav-links" style="display:flex;gap:1.75rem;list-style:none;align-items:center;">
+        <li><a href="okatent-carpas.html">Inicio</a></li>
+        <li><a href="okatent-configurador.html">Carpas Plegables</a></li>
+        <li><a href="okatent-recambios.html" style="font-weight:600;">Recambios</a></li>
+        <li><a href="okatent-carpas.html#contacto">Contacto</a></li>
+      </ul>
+    <a href="okatent-configurador.html" class="nav-cta">Tu propia carpa personalizada →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-label">Piezas originales Okatent</span>
+      <h1 class="hero-h1">Recambios para<br>tu carpa Cebú</h1>
+      <p class="hero-desc">Una pieza rota no significa comprar una carpa nueva. Tenemos todas las piezas estructurales disponibles por separado, con referencia de catálogo y envío a toda España.</p>
+      <span class="hero-badge">✓ Piezas 100% originales · Envío en 48–72 h</span>
+    </div>
+    <div style="text-align:right; color:rgba(255,255,255,.15); font-family:var(--font-heading); font-size:6rem; line-height:1; user-select:none;">⚙</div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span>✓ Piezas originales de fábrica</span>
+  <span>✓ Compatibles con todos los modelos Cebú</span>
+  <span>✓ Envío a toda España</span>
+  <span>✓ Garantía de fabricante</span>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- MODEL SELECT -->
+  <div class="model-select-section">
+    <div class="model-select-title">Recambios para tu carpa</div>
+    <p class="model-select-sub">Elige tu modelo para ver las piezas y medidas disponibles.</p>
+    <div class="model-select-grid">
+      <div class="model-select-card active" data-model="cebu" onclick="selectModel('cebu')">
+        <div class="model-select-card-name">Cebú</div>
+        <div class="model-select-card-desc">Gama profesional. Aluminio anodizado, certificado T2 APPLUS.</div>
+        <span class="model-select-card-tag">Opción Cebú</span>
+      </div>
+      <div class="model-select-card" data-model="borneo" onclick="selectModel('borneo')">
+        <div class="model-select-card-name">Borneo</div>
+        <div class="model-select-card-desc">Gama de iniciación. Ligera y económica.</div>
+        <span class="model-select-card-tag">Opción Borneo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTERS + SEARCH -->
+  <div class="filters-bar" id="filtersBar">
+    <span class="filters-label">Filtrar por medida:</span>
+    <button class="filter-btn active" data-filter="all">Todas</button>
+    <button class="filter-btn" data-filter="universal">Universal</button>
+    <button class="filter-btn" data-filter="s">2×2 / 2×3 / 2×4</button>
+    <button class="filter-btn" data-filter="m" id="filterM">3×3 / 3×4,5 / 3×6</button>
+    <button class="filter-btn" data-filter="l" data-models="cebu">4×4 / 4×6 / 4×8</button>
+    <button class="filter-btn" data-filter="xl" data-models="cebu">5×5</button>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" type="text" placeholder="Buscar pieza o referencia..." oninput="searchProducts(this.value)">
+    </div>
+  </div>
+
+  <p class="results-count" id="resultsCount"></p>
+
+  <!-- PRODUCT GRID -->
+  <div class="products-grid" id="productsGrid">
+
+    <!-- UNIVERSAL -->
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5010')" data-model="cebu" data-sizes="universal" data-name="protector perfil central ca5010">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5010/IMG_1059.jpg" alt="Protector perfil central CA5010" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5010</div>
+        <div class="product-name">Protector perfil central</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">1,50 €</span>
+          <button class="product-buy" onclick="addToCart('Protector perfil central #CA5010', 1.50)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5020')" data-model="cebu" data-sizes="universal" data-name="tapón perfil rectangular ca5020">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5020/IMG_1056.jpg" alt="Tapón perfil rectangular CA5020" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5020</div>
+        <div class="product-name">Tapón perfil rectangular</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">1,50 €</span>
+          <button class="product-buy" onclick="addToCart('Tapón perfil rectangular #CA5020', 1.50)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5030')" data-model="cebu" data-sizes="universal" data-name="tapón perfil cuadrado ca5030">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5030/IMG_1050.jpg" alt="Tapón perfil cuadrado CA5030" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5030</div>
+        <div class="product-name">Tapón perfil cuadrado</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">3,00 €</span>
+          <button class="product-buy" onclick="addToCart('Tapón perfil cuadrado #CA5030', 3.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5040')" data-model="cebu" data-sizes="universal" data-name="bulón ca5040">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5040/IMG_1038.jpg" alt="Bulón CA5040" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5040</div>
+        <div class="product-name">Bulón</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">4,50 €</span>
+          <button class="product-buy" onclick="addToCart('Bulón #CA5040', 4.50)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5050')" data-model="cebu" data-sizes="universal" data-name="fijador altura ca5050">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5050/IMG_1040.jpg" alt="Fijador de altura CA5050" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5050</div>
+        <div class="product-name">Fijador de altura</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">21,00 €</span>
+          <button class="product-buy" onclick="addToCart('Fijador de altura #CA5050', 21.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5060')" data-model="cebu" data-sizes="universal" data-name="junta perfil central ca5060">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5060/IMG_1054.jpg" alt="Junta perfil central CA5060" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5060</div>
+        <div class="product-name">Junta perfil central</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">23,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta perfil central #CA5060', 23.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5070')" data-model="cebu" data-sizes="universal" data-name="junta superior dos varillas ca5070">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5070/IMG_0997.jpg" alt="Junta superior dos varillas CA5070" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5070</div>
+        <div class="product-name">Junta superior dos varillas</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">23,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta superior dos varillas #CA5070', 23.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5080')" data-model="cebu" data-sizes="universal" data-name="junta superior tres varillas ca5080">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5080/IMG_1008.jpg" alt="Junta superior tres varillas CA5080" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5080</div>
+        <div class="product-name">Junta superior tres varillas</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">23,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta superior tres varillas #CA5080', 23.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5090')" data-model="cebu" data-sizes="universal" data-name="unión bulón apertura 2 ca5090">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5090/IMG_1079.jpg" alt="Unión con bulón apertura 2 CA5090" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5090</div>
+        <div class="product-name">Unión con bulón apertura 2</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">32,00 €</span>
+          <button class="product-buy" onclick="addToCart('Unión con bulón apertura 2 #CA5090', 32.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5100')" data-model="cebu" data-sizes="universal" data-name="unión bulón apertura 3 ca5100">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5100/IMG_1068.jpg" alt="Unión con bulón apertura 3 CA5100" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5100</div>
+        <div class="product-name">Unión con bulón apertura 3</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">32,00 €</span>
+          <button class="product-buy" onclick="addToCart('Unión con bulón apertura 3 #CA5100', 32.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5110')" data-model="cebu" data-sizes="universal" data-name="junta perfil central ca5110">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5110/IMG_1004.jpg" alt="Junta perfil central CA5110" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5110</div>
+        <div class="product-name">Junta perfil central</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">23,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta perfil central #CA5110', 23.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5150')" data-model="cebu" data-sizes="universal" data-name="perfil cono ca5150">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5150/IMG_1071.jpg" alt="Perfil cono CA5150" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5150</div>
+        <div class="product-name">Perfil cono</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">10,00 €</span>
+          <button class="product-buy" onclick="addToCart('Perfil cono #CA5150', 10.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5160')" data-model="cebu" data-sizes="universal" data-name="cono ca5160">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5160/IMG_1062.jpg" alt="Cono CA5160" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5160</div>
+        <div class="product-name">Cono</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">4,00 €</span>
+          <button class="product-buy" onclick="addToCart('Cono #CA5160', 4.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5190')" data-model="cebu" data-sizes="universal" data-name="tornillería i ca5190">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5190/IMG_1044.jpg" alt="Tornillería I CA5190" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5190</div>
+        <div class="product-name">Tornillería I</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">2,00 €</span>
+          <button class="product-buy" onclick="addToCart('Tornillería I #CA5190', 2.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('CA5200')" data-model="cebu" data-sizes="universal" data-name="tornillería ii ca5200">
+      <div class="product-img"><img src="imgs/recambios-clean/CA5200/IMG_1036.jpg" alt="Tornillería II CA5200" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5200</div>
+        <div class="product-name">Tornillería II</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">2,00 €</span>
+          <button class="product-buy" onclick="addToCart('Tornillería II #CA5200', 2.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRUCETA -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('CA5120', event)" data-model="cebu" data-sizes="s m l xl" data-name="cruceta cebu ca5120 ca5121 ca5122 ca5123 2x2 3x3 4x4 5x5">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1473.png" alt="Cruceta Cebú" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5120 · CA5121 · CA5122 · CA5123</div>
+        <div class="product-name">Cruceta Cebú</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×6 / 4×4-4×8 / 5×5</span>
+        <div class="product-footer">
+          <span class="product-price">48,00 €</span>
+          <button class="product-buy" onclick="pickSize('CA5120', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- VARILLA -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('CA5130', event)" data-model="cebu" data-sizes="s m l xl" data-name="varilla cebu ca5130 ca5131 ca5132 ca5133 2x2 3x3 4x4 5x5">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_varilla.png" alt="Varilla Cebú CA5130" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5130 · CA5131 · CA5132 · CA5133</div>
+        <div class="product-name">Varilla Cebú</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×6 / 4×4-4×8 / 5×5</span>
+        <div class="product-footer">
+          <span class="product-price">24,00 €</span>
+          <button class="product-buy" onclick="pickSize('CA5130', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFIL CENTRAL -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('CA5140', event)" data-model="cebu" data-sizes="s m l xl" data-name="perfil central ca5140 ca5141 ca5142 ca5143 2x2 3x3 4x4 5x5">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_crop.png" alt="Perfil central CA5140" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5140 · CA5141 · CA5142 · CA5143</div>
+        <div class="product-name">Perfil central</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×6 / 4×4-4×8 / 5×5</span>
+        <div class="product-footer">
+          <span class="product-price">48,00 €</span>
+          <button class="product-buy" onclick="pickSize('CA5140', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFIL PILAR SUPERIOR -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('CA5170', event)" data-model="cebu" data-sizes="s m l xl" data-name="perfil pilar superior ca5170 ca5171 ca5172 ca5173 ca5174 2x2 3x3 4x4 5x5">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_crop.png" alt="Perfil pilar superior" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5170 · CA5171 · CA5172 · CA5173 · CA5174</div>
+        <div class="product-name">Perfil pilar superior</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×4,5-3×6 / 4×4-4×8 / 5×5</span>
+        <div class="product-footer">
+          <span class="product-price">50,00 €</span>
+          <button class="product-buy" onclick="pickSize('CA5170', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFIL PILAR INFERIOR -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('CA5180', event)" data-model="cebu" data-sizes="s m l xl" data-name="perfil pilar inferior ca5180 ca5181 ca5182 ca5183 2x2 3x3 4x4 5x5">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1455.png" alt="Perfil pilar inferior" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#CA5180 · CA5181 · CA5182 · CA5183</div>
+        <div class="product-name">Perfil pilar inferior</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×6 / 4×4-4×8 / 5×5</span>
+        <div class="product-footer">
+          <span class="product-price">48,00 €</span>
+          <button class="product-buy" onclick="pickSize('CA5180', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ BORNEO ============ -->
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7010')" data-model="borneo" data-sizes="universal" data-name="fijador de altura bo7010">
+      <div class="product-img"><img src="imgs/recambios-clean/B07010/IMG_1011.jpg" alt="Fijador de altura BO7010" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7010</div>
+        <div class="product-name">Fijador de altura</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">22,00 €</span>
+          <button class="product-buy" onclick="addToCart('Fijador de altura #BO7010', 22.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7020')" data-model="borneo" data-sizes="universal" data-name="unión con bulón apertura 2 bo7020">
+      <div class="product-img"><img src="imgs/recambios-clean/BO7020/IMG_1032.jpg" alt="Unión con bulón apertura 2 BO7020" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7020</div>
+        <div class="product-name">Unión con bulón apertura 2</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">32,00 €</span>
+          <button class="product-buy" onclick="addToCart('Unión con bulón apertura 2 #BO7020', 32.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7030')" data-model="borneo" data-sizes="universal" data-name="cono bo7030">
+      <div class="product-img"><img src="imgs/recambios-clean/B07030/IMG_1017.jpg" alt="Cono BO7030" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7030</div>
+        <div class="product-name">Cono</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">4,00 €</span>
+          <button class="product-buy" onclick="addToCart('Cono #BO7030', 4.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7040')" data-model="borneo" data-sizes="universal" data-name="junta perfil central bo7040">
+      <div class="product-img"><img src="imgs/recambios-clean/BO7040/IMG_1015.jpg" alt="Junta perfil central BO7040" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7040</div>
+        <div class="product-name">Junta perfil central</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">2,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta perfil central #BO7040', 2.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7050')" data-model="borneo" data-sizes="universal" data-name="tapón perfil rectangular bo7050">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1472.png" alt="Tapón perfil rectangular BO7050" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7050</div>
+        <div class="product-name">Tapón perfil rectangular</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">2,00 €</span>
+          <button class="product-buy" onclick="addToCart('Tapón perfil rectangular #BO7050', 2.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7060')" data-model="borneo" data-sizes="universal" data-name="pie bo7060">
+      <div class="product-img"><img src="imgs/recambios-clean/BO7060/IMG_1046.jpg" alt="Pie BO7060" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7060</div>
+        <div class="product-name">Pie</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">3,00 €</span>
+          <button class="product-buy" onclick="addToCart('Pie #BO7060', 3.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7070')" data-model="borneo" data-sizes="universal" data-name="junta superior dos barillas bo7070">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1474.png" alt="Junta superior dos barillas BO7070" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7070</div>
+        <div class="product-name">Junta superior dos barillas</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">23,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta superior dos barillas #BO7070', 23.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7080')" data-model="borneo" data-sizes="universal" data-name="junta superior tres barillas bo7080">
+      <div class="product-img"><img src="imgs/recambios-clean/BO7080/IMG_1019.jpg" alt="Junta superior tres barillas BO7080" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7080</div>
+        <div class="product-name">Junta superior tres barillas</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">23,00 €</span>
+          <button class="product-buy" onclick="addToCart('Junta superior tres barillas #BO7080', 23.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7120')" data-model="borneo" data-sizes="universal" data-name="perfil inferior bo7120">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_crop.png" alt="Perfil inferior BO7120" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7120</div>
+        <div class="product-name">Perfil inferior</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">33,00 €</span>
+          <button class="product-buy" onclick="addToCart('Perfil inferior #BO7120', 33.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7150')" data-model="borneo" data-sizes="universal" data-name="tornillería v bo7150">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1478.png" alt="Tornillería V BO7150" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7150</div>
+        <div class="product-name">Tornillería V</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">2,00 €</span>
+          <button class="product-buy" onclick="addToCart('Tornillería V #BO7150', 2.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" style="cursor:pointer" onclick="openPD('BO7160')" data-model="borneo" data-sizes="universal" data-name="tornillería vi bo7160">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1479.png" alt="Tornillería VI BO7160" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7160</div>
+        <div class="product-name">Tornillería VI</div>
+        <span class="product-size-tag">Universal</span>
+        <div class="product-footer">
+          <span class="product-price">2,00 €</span>
+          <button class="product-buy" onclick="addToCart('Tornillería VI #BO7160', 2.00)">Pedir</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFIL CONO -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('BO7090', event)" data-model="borneo" data-sizes="s m" data-name="perfil cono bo7090 bo7091 2x2 3x3">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_crop.png" alt="Perfil cono BO7090" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7090 · BO7091</div>
+        <div class="product-name">Perfil cono</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3</span>
+        <div class="product-footer">
+          <span class="product-price">10,00 €</span>
+          <button class="product-buy" onclick="pickSize('BO7090', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRUCETA BORNEO -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('BO70100', event)" data-model="borneo" data-sizes="s m" data-name="cruceta borneo bo70100 bo70101 2x2 3x3">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1475.png" alt="Cruceta Borneo" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO70100 · BO70101</div>
+        <div class="product-name">Cruceta Borneo</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×4,5</span>
+        <div class="product-footer">
+          <span class="product-price">43,00 €</span>
+          <button class="product-buy" onclick="pickSize('BO70100', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VARILLA BORNEO -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('BO7110', event)" data-model="borneo" data-sizes="s m" data-name="varilla borneo bo7110 bo7111 2x2 3x3">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_varilla.png" alt="Varilla Borneo BO7110" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7110 · BO7111</div>
+        <div class="product-name">Varilla Borneo</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3</span>
+        <div class="product-footer">
+          <span class="product-price">21,50 €</span>
+          <button class="product-buy" onclick="pickSize('BO7110', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFIL CENTRAL -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('BO7130', event)" data-model="borneo" data-sizes="s m" data-name="perfil central bo7130 bo7131 2x2 3x3">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_crop.png" alt="Perfil central Borneo BO7130" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7130 · BO7131</div>
+        <div class="product-name">Perfil central</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×4,5</span>
+        <div class="product-footer">
+          <span class="product-price">20,00 €</span>
+          <button class="product-buy" onclick="pickSize('BO7130', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFIL SUPERIOR -->
+    <div class="product-card" style="cursor:pointer" onclick="pickSize('BO7140', event)" data-model="borneo" data-sizes="s m" data-name="perfil superior bo7140 bo7141 2x2 3x3">
+      <div class="product-img"><img src="imgs/recambios-nobg/IMG_1471_crop.png" alt="Perfil superior Borneo BO7140" loading="lazy"></div>
+      <div class="product-body">
+        <div class="product-ref">#BO7140 · BO7141</div>
+        <div class="product-name">Perfil Superior</div>
+        <span class="product-size-tag">2×2-2×4 / 3×3-3×4,5</span>
+        <div class="product-footer">
+          <span class="product-price">20,00 €</span>
+          <button class="product-buy" onclick="pickSize('BO7140', event)">Elegir medida</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /products-grid -->
+
+  <div class="empty-state" id="emptyState">
+    <h3>Sin resultados</h3>
+    <p>Prueba otro término de búsqueda o contacta con nosotros.</p>
+  </div>
+
+  <div class="model-pending" id="modelPending" style="display:none;">
+    <h3>Catálogo Borneo próximamente</h3>
+    <p>Estamos preparando el listado de recambios para Borneo. Mientras tanto, contáctanos y te ayudamos directamente.</p>
+  </div>
+
+  <!-- CONTACT CTA -->
+  <div class="contact-cta">
+    <div>
+      <h2>¿No encuentras la pieza?</h2>
+      <p>Contacta con nosotros y te localizamos cualquier recambio de la gama Cebú.</p>
+    </div>
+    <a href="mailto:info@okatent.com">Escribirnos →</a>
+  </div>
+
+</main>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div id="pdModal">
+  <div class="pd-backdrop" onclick="closePD()"></div>
+  <div class="pd-box">
+    <button class="pd-close" onclick="closePD()">✕</button>
+    <div class="pd-gallery">
+      <div class="pd-main-img"><img id="pdMainImg" src="" alt=""></div>
+      <div class="pd-thumbs" id="pdThumbs"></div>
+    </div>
+    <div class="pd-info">
+      <div class="pd-ref" id="pdRef"></div>
+      <div class="pd-name" id="pdName"></div>
+      <div id="pdSizeTag"></div>
+      <div class="pd-desc" id="pdDesc"></div>
+      <div class="pd-price-row">
+        <span class="pd-price" id="pdPrice"></span>
+        <span class="pd-price-note" id="pdPriceNote"></span>
+      </div>
+      <div class="pd-qty-row">
+        <span class="pd-qty-label">Cantidad:</span>
+        <div class="pd-qty-ctrl">
+          <button class="pd-qty-btn" onclick="pdQtyChange(-1)">−</button>
+          <span class="pd-qty-num" id="pdQtyNum">1</span>
+          <button class="pd-qty-btn" onclick="pdQtyChange(1)">+</button>
+        </div>
+      </div>
+      <button class="pd-add-btn" id="pdAddBtn" onclick="pdAddToCart()">Añadir al carrito</button>
+      <button class="pd-back-btn" onclick="closePD()">← Seguir viendo recambios</button>
+    </div>
+  </div>
+</div>
+
+<!-- CART FAB -->
+<button id="cartFab" onclick="openCart()">
+  <span class="fab-label">Mi pedido</span>
+  <span class="fab-badge" id="fabBadge">0</span>
+  <span class="fab-total" id="fabTotal">0,00 €</span>
+  <span>→</span>
+</button>
+
+<!-- CART PANEL BACKDROP -->
+<div id="cartBackdrop" style="position:fixed;inset:0;z-index:2000;background:rgba(13,26,58,.45);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .35s ease;" onclick="closeCart()"></div>
+
+<!-- CART PANEL -->
+<div id="cartPanel">
+  <div class="cart-panel-head">
+    <h3>Tu pedido</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-panel-items" id="cartPanelItems">
+    <div class="cart-empty">
+      <div style="font-size:2rem;">🛒</div>
+      <p>Añade piezas desde el catálogo</p>
+    </div>
+  </div>
+  <div class="cart-panel-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total estimado</span>
+      <span class="cart-total-amount" id="cartTotalAmount">0,00 €</span>
+    </div>
+    <div class="cart-checkout-btns">
+      <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pedir por WhatsApp
+      </button>
+      <button class="btn-email" onclick="checkoutEmail()">
+        ✉ Pedir por email
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── PRODUCT DATA ──────────────────────────────────────
+  const PRODUCTS = {
+    'CA5010': { name:'Protector perfil central', ref:'#CA5010', price:1.50, size:'Universal', desc:'Protector de plástico que cubre y protege el extremo del perfil central de la estructura. Evita el desgaste y daños en el aluminio durante el montaje y desmontaje.', photos:['imgs/recambios-clean/CA5010/IMG_1059.jpg','imgs/recambios-clean/CA5010/IMG_1060.jpg','imgs/recambios-clean/CA5010/IMG_1061.jpg'] },
+    'CA5020': { name:'Tapón perfil rectangular', ref:'#CA5020', price:1.50, size:'Universal', desc:'Tapón de cierre para los extremos de los perfiles rectangulares de las patas. Protege el aluminio y da un acabado limpio a la estructura.', photos:['imgs/recambios-clean/CA5020/IMG_1056.jpg','imgs/recambios-clean/CA5020/IMG_1057.jpg','imgs/recambios-clean/CA5020/IMG_1058.jpg'] },
+    'CA5030': { name:'Tapón perfil cuadrado', ref:'#CA5030', price:3.00, size:'Universal', desc:'Tapón de cierre para perfiles cuadrados. Encaja en los extremos de los perfiles de la estructura para protegerlos y evitar arañazos en superficies.', photos:['imgs/recambios-clean/CA5030/IMG_1050.jpg','imgs/recambios-clean/CA5030/IMG_1051.jpg'] },
+    'CA5040': { name:'Bulón', ref:'#CA5040', price:4.50, size:'Universal', desc:'Bulón de apertura de la estructura. Elemento clave en las juntas de la tijera que permite el movimiento de apertura y cierre de la carpa.', photos:['imgs/recambios-clean/CA5040/IMG_1038.jpg','imgs/recambios-clean/CA5040/IMG_1039.jpg'] },
+    'CA5050': { name:'Fijador de altura', ref:'#CA5050', price:21.00, size:'Universal', desc:'Mecanismo de fijación de la altura de las patas. Permite ajustar la altura de la carpa en varios niveles y bloquearla de forma segura.', photos:['imgs/recambios-clean/CA5050/IMG_1040.jpg','imgs/recambios-clean/CA5050/IMG_1041.jpg'] },
+    'CA5060': { name:'Junta perfil central', ref:'#CA5060', price:23.00, size:'Universal', desc:'Junta conectora del perfil central de la estructura de tijera. Pieza fundamental que une los brazos de la tijera en el centro del tramo.', photos:['imgs/recambios-clean/CA5060/IMG_1054.jpg','imgs/recambios-clean/CA5060/IMG_1055.jpg'] },
+    'CA5070': { name:'Junta superior dos varillas', ref:'#CA5070', price:23.00, size:'Universal', desc:'Junta de conexión superior para unir dos varillas del techo. Se sitúa en la parte alta de la estructura y conecta las varillas que forman el armazón del techo.', photos:['imgs/recambios-clean/CA5070/IMG_0997.jpg','imgs/recambios-clean/CA5070/IMG_0999.jpg','imgs/recambios-clean/CA5070/IMG_1001.jpg'] },
+    'CA5080': { name:'Junta superior tres varillas', ref:'#CA5080', price:23.00, size:'Universal', desc:'Junta de conexión superior para unir tres varillas del techo. Usada en los modelos de mayor tamaño donde el techo requiere más puntos de apoyo centrales.', photos:['imgs/recambios-clean/CA5080/IMG_1008.jpg','imgs/recambios-clean/CA5080/IMG_1009.jpg','imgs/recambios-clean/CA5080/IMG_1010.jpg'] },
+    'CA5090': { name:'Unión con bulón apertura 2', ref:'#CA5090', price:32.00, size:'Universal', desc:'Pieza de unión con bulón para la apertura de 2 brazos de la tijera. Conecta dos tramos de la estructura y permite su apertura y cierre controlado.', photos:['imgs/recambios-clean/CA5090/IMG_1079.jpg','imgs/recambios-clean/CA5090/IMG_1080.jpg','imgs/recambios-clean/CA5090/IMG_1081.jpg'] },
+    'CA5100': { name:'Unión con bulón apertura 3', ref:'#CA5100', price:32.00, size:'Universal', desc:'Pieza de unión con bulón para la apertura de 3 brazos. Usada en los tramos centrales de carpas más anchas donde confluyen tres brazos de la tijera.', photos:['imgs/recambios-clean/CA5100/IMG_1068.jpg','imgs/recambios-clean/CA5100/IMG_1069.jpg','imgs/recambios-clean/CA5100/IMG_1070.jpg'] },
+    'CA5110': { name:'Junta perfil central', ref:'#CA5110', price:23.00, size:'Universal', desc:'Junta de unión para el perfil central superior. Conecta los tramos del perfil central en la parte alta de la estructura de tijera.', photos:['imgs/recambios-clean/CA5110/IMG_1004.jpg','imgs/recambios-clean/CA5110/IMG_1007.jpg'] },
+    'CA5150': { name:'Perfil cono', ref:'#CA5150', price:10.00, size:'Universal', desc:'Perfil del cono superior de la carpa. Pieza de aluminio que forma el remate del techo y da soporte a la lona en el punto más alto.', photos:['imgs/recambios-clean/CA5150/IMG_1071.jpg','imgs/recambios-clean/CA5150/IMG_1072.jpg'] },
+    'CA5160': { name:'Cono', ref:'#CA5160', price:4.00, size:'Universal', desc:'Pieza de plástico del cono superior. Se coloca en el vértice del techo de la carpa para proteger la lona y dar acabado a la punta.', photos:['imgs/recambios-clean/CA5160/IMG_1062.jpg','imgs/recambios-clean/CA5160/IMG_1063.jpg'] },
+    'CA5190': { name:'Tornillería I', ref:'#CA5190', price:2.00, size:'Universal', desc:'Kit de tornillos y tuercas tipo I para el montaje de la estructura. Incluye los tornillos necesarios para las uniones principales de la tijera.', photos:['imgs/recambios-clean/CA5190/IMG_1044.jpg','imgs/recambios-clean/CA5190/IMG_1045.jpg'] },
+    'CA5200': { name:'Tornillería II', ref:'#CA5200', price:2.00, size:'Universal', desc:'Kit de tornillos y tuercas tipo II para la fijación del techo y paredes. Complementa el kit I para el montaje completo de la carpa.', photos:['imgs/recambios-clean/CA5200/IMG_1036.jpg','imgs/recambios-clean/CA5200/IMG_1037.jpg'] },
+    'CA5120': { name:'Cruceta Cebú', ref:'#CA5120', price:48.00, size:'2×2 / 2×3 / 2×4', desc:'Cruceta de aluminio de la estructura Cebú. Pieza central de la tijera que conecta los cuatro brazos principales. Fabricada en aluminio anodizado de alta resistencia.', photos:['imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png'] },
+    'CA5121': { name:'Cruceta Cebú', ref:'#CA5121', price:48.00, size:'3×3 / 3×4,5 / 3×6', desc:'Cruceta de aluminio de la estructura Cebú para modelos de tamaño mediano. Pieza central de la tijera que conecta los cuatro brazos principales.', photos:['imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png'] },
+    'CA5122': { name:'Cruceta Cebú', ref:'#CA5122', price:48.00, size:'4×4 / 4×6 / 4×8', desc:'Cruceta de aluminio de la estructura Cebú para modelos grandes. Mayor sección para soportar el peso de estructuras de 4 metros o más.', photos:['imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png'] },
+    'CA5123': { name:'Cruceta Cebú', ref:'#CA5123', price:48.00, size:'5×5', desc:'Cruceta de aluminio Cebú para el modelo 5×5 m. La versión más robusta, diseñada para soportar grandes superficies de techo.', photos:['imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png','imgs/recambios-nobg/IMG_1473.png'] },
+    'CA5170': { name:'Perfil pilar superior', ref:'#CA5170', price:50.00, size:'2×2 / 2×3 / 2×4', desc:'Tramo superior de la pata de la carpa Cebú. Perfil de aluminio anodizado que forma la parte alta de la pata telescópica.', photos:['imgs/recambios-nobg/IMG_1471_crop.png'] },
+    'CA5171': { name:'Perfil pilar superior', ref:'#CA5171', price:50.00, size:'3×3 / 3×4,5 / 3×6', desc:'Tramo superior de la pata para modelos medianos. Perfil de aluminio anodizado de mayor longitud.', photos:['imgs/recambios-nobg/IMG_1471_crop.png'] },
+    'CA5172': { name:'Perfil pilar superior', ref:'#CA5172', price:50.00, size:'4×4 / 4×6 / 4×8', desc:'Tramo superior de la pata para modelos grandes.', photos:['imgs/recambios-nobg/IMG_1471_crop.png'] },
+    'CA5173': { name:'Perfil pilar superior', ref:'#CA5173', price:50.00, size:'5×5', desc:'Tramo superior de la pata para el modelo 5×5 m.', photos:['imgs/recambios-nobg/IMG_1471_crop.png'] },
+    'CA5174': { name:'Perfil pilar superior', ref:'#CA5174', price:50.00, size:'3×4,5', desc:'Tramo superior de pata específico para el modelo 3×4,5 m.', photos:['imgs/recambios-nobg/IMG_1471_crop.png'] },
+    'CA5180': { name:'Perfil pilar inferior', ref:'#CA5180', price:48.00, size:'2×2 / 2×3 / 2×4', desc:'Tramo inferior de la pata telescópica de la carpa Cebú. Se encaja dentro del perfil superior para ajustar la altura de la carpa.', photos:['imgs/recambios-nobg/IMG_1455.png'] },
+    'CA5181': { name:'Perfil pilar inferior', ref:'#CA5181', price:48.00, size:'3×3 / 3×4,5 / 3×6', desc:'Tramo inferior de la pata para modelos medianos.', photos:['imgs/recambios-nobg/IMG_1455.png'] },
+    'CA5182': { name:'Perfil pilar inferior', ref:'#CA5182', price:48.00, size:'4×4 / 4×6 / 4×8', desc:'Tramo inferior de la pata para modelos grandes.', photos:['imgs/recambios-nobg/IMG_1455.png'] },
+    'CA5183': { name:'Perfil pilar inferior', ref:'#CA5183', price:48.00, size:'5×5', desc:'Tramo inferior de la pata para el modelo 5×5 m.', photos:['imgs/recambios-nobg/IMG_1455.png'] },
+    // Borneo
+    'BO7010': { name:'Fijador de altura', ref:'#BO7010', price:22.0, size:'Universal', desc:'Mecanismo de fijación de altura para la carpa Borneo. Permite ajustar y bloquear la altura de las patas en diferentes posiciones.', photos:['imgs/recambios-clean/B07010/IMG_1011.jpg','imgs/recambios-clean/B07010/IMG_1012.jpg','imgs/recambios-clean/B07010/IMG_1013.jpg','imgs/recambios-clean/B07010/IMG_1014.jpg'] },
+    'BO7020': { name:'Unión con bulón apertura 2', ref:'#BO7020', price:32.0, size:'Universal', desc:'Pieza de unión con bulón para 2 brazos de la tijera Borneo. Conecta dos tramos de la estructura y permite la apertura controlada.', photos:['imgs/recambios-clean/BO7020/IMG_1032.jpg','imgs/recambios-clean/BO7020/IMG_1033.jpg','imgs/recambios-clean/BO7020/IMG_1034.jpg','imgs/recambios-clean/BO7020/IMG_1035.jpg'] },
+    'BO7030': { name:'Cono', ref:'#BO7030', price:4.0, size:'Universal', desc:'Pieza del cono superior de la carpa Borneo. Protege la lona en el punto más alto de la carpa y remata la estructura del techo.', photos:['imgs/recambios-clean/B07030/IMG_1017.jpg','imgs/recambios-clean/B07030/IMG_1018.jpg'] },
+    'BO7040': { name:'Junta perfil central', ref:'#BO7040', price:2.0, size:'Universal', desc:'Junta de unión del perfil central de la estructura Borneo. Conecta los brazos de la tijera en los tramos del perfil central.', photos:['imgs/recambios-clean/BO7040/IMG_1015.jpg','imgs/recambios-clean/BO7040/IMG_1016.jpg','imgs/recambios-clean/BO7040/PHOTO-2026-07-08-11-41-51.jpg'] },
+    'BO7060': { name:'Pie', ref:'#BO7060', price:3.0, size:'Universal', desc:'Pie de apoyo de la pata de la carpa Borneo. Base que contacta con el suelo y distribuye el peso de la estructura.', photos:['imgs/recambios-clean/BO7060/IMG_1046.jpg','imgs/recambios-clean/BO7060/IMG_1047.jpg','imgs/recambios-clean/BO7060/IMG_1048.jpg','imgs/recambios-clean/BO7060/IMG_1049.jpg'] },
+    'BO7080': { name:'Junta superior tres varillas', ref:'#BO7080', price:23.0, size:'Universal', desc:'Junta de conexión superior para tres varillas del techo Borneo. Usada en modelos de tamaño mediano donde el techo necesita soporte adicional.', photos:['imgs/recambios-clean/BO7080/IMG_1019.jpg','imgs/recambios-clean/BO7080/IMG_1020.jpg','imgs/recambios-clean/BO7080/IMG_1021.jpg'] },
+    'BO70100': { name:'Cruceta Borneo', ref:'#BO70100', price:43.0, size:'2×2 / 2×3 / 2×4', desc:'Cruceta de la estructura Borneo para modelos pequeños. Pieza central de la tijera que une los cuatro brazos principales de la estructura.', photos:['imgs/recambios-nobg/IMG_1475.png'] },
+    'BO70101': { name:'Cruceta Borneo', ref:'#BO70101', price:43.0, size:'3×3 / 3×4,5', desc:'Cruceta de la estructura Borneo para modelos medianos.', photos:['imgs/recambios-nobg/IMG_1475.png'] },
+  };
+
+
+  // ── VARIANTS MAP ─────────────────────────────────────────────
+  const VARIANTS = {
+    'CA5120': [{ref:'CA5120',size:'2×2 / 2×3 / 2×4'},{ref:'CA5121',size:'3×3 / 3×4,5 / 3×6'},{ref:'CA5122',size:'4×4 / 4×6 / 4×8'},{ref:'CA5123',size:'5×5'}],
+    'CA5130': [{ref:'CA5130',size:'2×2 / 2×3 / 2×4'},{ref:'CA5131',size:'3×3 / 3×4,5 / 3×6'},{ref:'CA5132',size:'4×4 / 4×6 / 4×8'},{ref:'CA5133',size:'5×5'}],
+    'CA5140': [{ref:'CA5140',size:'2×2 / 2×3 / 2×4'},{ref:'CA5141',size:'3×3 / 3×4,5 / 3×6'},{ref:'CA5142',size:'4×4 / 4×6 / 4×8'},{ref:'CA5143',size:'5×5'}],
+    'CA5170': [{ref:'CA5170',size:'2×2 / 2×3 / 2×4'},{ref:'CA5171',size:'3×3 / 3×6'},{ref:'CA5174',size:'3×4,5'},{ref:'CA5172',size:'4×4 / 4×6 / 4×8'},{ref:'CA5173',size:'5×5'}],
+    'CA5180': [{ref:'CA5180',size:'2×2 / 2×3 / 2×4'},{ref:'CA5181',size:'3×3 / 3×4,5 / 3×6'},{ref:'CA5182',size:'4×4 / 4×6 / 4×8'},{ref:'CA5183',size:'5×5'}],
+    'BO70100':[ {ref:'BO70100',size:'2×2 / 2×3 / 2×4'},{ref:'BO70101',size:'3×3 / 3×4,5'}],
+    'BO7090': [{ref:'BO7090',size:'2×2 / 2×3 / 2×4'},{ref:'BO7091',size:'3×3'}],
+    'BO7110': [{ref:'BO7110',size:'2×2 / 2×3 / 2×4'},{ref:'BO7111',size:'3×3'}],
+    'BO7130': [{ref:'BO7130',size:'2×2 / 2×3 / 2×4'},{ref:'BO7131',size:'3×3 / 3×4,5'}],
+    'BO7140': [{ref:'BO7140',size:'2×2 / 2×3 / 2×4'},{ref:'BO7141',size:'3×3 / 3×4,5'}],
+  };
+
+  function pickSize(baseCode, e) {
+    if (e) e.stopPropagation();
+    const variants = VARIANTS[baseCode];
+    if (!variants) { openPD(baseCode); return; }
+    const base = PRODUCTS[baseCode];
+    if (!base) return;
+    document.getElementById('spName').textContent = base.name;
+    document.getElementById('spRef').textContent = base.ref.replace(/^#/, '#') + ' — ' + (base.price > 0 ? fmtPrice(base.price) : 'Consultar precio');
+    const opts = document.getElementById('spOptions');
+    opts.innerHTML = variants.map(v => {
+      const p = PRODUCTS[v.ref] || base;
+      const priceStr = p.price > 0 ? fmtPrice(p.price) : 'Consultar';
+      return `<button onclick="spSelect('${v.ref}')" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border:1.5px solid #dde3ef; border-radius:10px; background:#f7f9ff; cursor:pointer; font-size:.95rem; color:#1A2B5C; font-weight:500; transition:background .15s;" onmouseover="this.style.background='#e8eeff'" onmouseout="this.style.background='#f7f9ff'">
+        <span>${v.size}</span><span style="color:#7a8599; font-size:.85rem">${priceStr}</span>
+      </button>`;
+    }).join('');
+    const modal = document.getElementById('spModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function spSelect(code) {
+    closeSP();
+    openPD(code);
+  }
+
+  function closeSP() {
+    document.getElementById('spModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // ── PRODUCT DETAIL MODAL ───────────────────────────────
+  let pdCurrentProduct = null;
+  let pdCurrentQty = 1;
+
+  function openPD(code) {
+    const p = PRODUCTS[code];
+    if (!p) return;
+    pdCurrentProduct = { code, ...p };
+    pdCurrentQty = 1;
+
+    document.getElementById('pdRef').textContent = p.ref;
+    document.getElementById('pdName').textContent = p.name;
+    document.getElementById('pdDesc').textContent = p.desc;
+    document.getElementById('pdQtyNum').textContent = 1;
+
+    const sizeEl = document.getElementById('pdSizeTag');
+    sizeEl.innerHTML = p.size ? `<span class="pd-size-tag">${p.size}</span>` : '';
+
+    const priceEl = document.getElementById('pdPrice');
+    const noteEl = document.getElementById('pdPriceNote');
+    const addBtn = document.getElementById('pdAddBtn');
+    if (p.price > 0) {
+      priceEl.textContent = fmtPrice(p.price);
+      noteEl.textContent = 'por unidad · IVA no incluido';
+      addBtn.textContent = 'Añadir al carrito';
+      addBtn.onclick = pdAddToCart;
+    } else {
+      priceEl.textContent = 'Consultar precio';
+      noteEl.textContent = '';
+      addBtn.textContent = 'Consultar por WhatsApp';
+      addBtn.onclick = () => consultPart(`${p.name} ${p.ref}`);
+    }
+
+    // Gallery
+    const main = document.getElementById('pdMainImg').querySelector('img');
+    const thumbs = document.getElementById('pdThumbs');
+    const photos = p.photos.filter(Boolean);
+    if (photos.length) {
+      main.src = photos[0];
+      main.alt = p.name;
+      thumbs.innerHTML = photos.map((src, i) => `
+        <div class="pd-thumb ${i===0?'active':''}" onclick="pdSetPhoto(this,'${src}')">
+          <img src="${src}" alt="">
+        </div>`).join('');
+    }
+
+    const modal = document.getElementById('pdModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function pdSetPhoto(thumb, src) {
+    document.getElementById('pdMainImg').querySelector('img').src = src;
+    document.querySelectorAll('.pd-thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  }
+
+  function pdQtyChange(delta) {
+    pdCurrentQty = Math.max(1, pdCurrentQty + delta);
+    document.getElementById('pdQtyNum').textContent = pdCurrentQty;
+  }
+
+  function pdAddToCart() {
+    if (!pdCurrentProduct) return;
+    const { code, name, ref, price } = pdCurrentProduct;
+    const key = `${name} ${ref}`;
+    if (cart[key]) cart[key].qty += pdCurrentQty;
+    else cart[key] = { name: key, price, qty: pdCurrentQty };
+    updateCartUI();
+    // Update card button if visible
+    updateCardQty(key);
+    closePD();
+  }
+
+  function closePD() {
+    document.getElementById('pdModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── CART ──────────────────────────────────────────────
+  const cart = {}; // key → {name, price, qty}
+
+  const WHATSAPP_NUMBER = '34600000000'; // ← cambia por el número real de Okatent
+
+  function addToCart(name, price) {
+    if (cart[name]) {
+      cart[name].qty++;
+    } else {
+      cart[name] = { name, price, qty: 1 };
+    }
+    updateCartUI();
+    updateCardQty(name);
+  }
+
+  function changeQty(name, price, delta) {
+    if (!cart[name]) cart[name] = { name, price, qty: 0 };
+    cart[name].qty = Math.max(0, cart[name].qty + delta);
+    if (cart[name].qty === 0) delete cart[name];
+    updateCartUI();
+    updateCardQty(name);
+  }
+
+  function updateCardQty(name) {
+    const btn = [...document.querySelectorAll('.product-buy[data-cart-name]')]
+      .find(b => b.dataset.cartName === name);
+    if (!btn) return;
+    const footer = btn.closest('.product-footer');
+    const qty = cart[name]?.qty || 0;
+    if (qty === 0) {
+      footer.querySelector('.qty-controls')?.remove();
+      btn.style.display = '';
+    } else {
+      btn.style.display = 'none';
+      let ctrl = footer.querySelector('.qty-controls');
+      if (!ctrl) {
+        ctrl = document.createElement('div');
+        ctrl.className = 'qty-controls';
+        footer.appendChild(ctrl);
+      }
+      ctrl.innerHTML = `
+        <button class="qty-btn minus" onclick="changeQty('${name.replace(/'/g,"\\'")}',${cart[name]?.price||0},-1)">−</button>
+        <span class="qty-num">${qty}</span>
+        <button class="qty-btn plus" onclick="changeQty('${name.replace(/'/g,"\\'")}',${cart[name]?.price||0},1)">+</button>
+      `;
+    }
+  }
+
+  function updateCartUI() {
+    const items = Object.values(cart);
+    const totalQty = items.reduce((s, i) => s + i.qty, 0);
+    const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+    const fab = document.getElementById('cartFab');
+    fab.style.display = totalQty > 0 ? 'flex' : 'none';
+    document.getElementById('fabBadge').textContent = totalQty;
+    document.getElementById('fabTotal').textContent = fmtPrice(total);
+    document.getElementById('cartTotalAmount').textContent = fmtPrice(total);
+    renderCartPanel();
+  }
+
+  function fmtPrice(n) {
+    return n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+  }
+
+  function renderCartPanel() {
+    const el = document.getElementById('cartPanelItems');
+    const items = Object.values(cart);
+    if (items.length === 0) {
+      el.innerHTML = '<div class="cart-empty"><div style="font-size:2rem">🛒</div><p>Añade piezas desde el catálogo</p></div>';
+      return;
+    }
+    el.innerHTML = items.map(i => `
+      <div class="cart-row">
+        <div class="cart-row-info">
+          <div class="cart-row-name">${i.name.split('#')[0].trim()}</div>
+          <div class="cart-row-price">${i.price > 0 ? fmtPrice(i.price) + ' / ud.' : 'Consultar precio'}</div>
+        </div>
+        <div class="qty-controls" style="flex-shrink:0;">
+          <button class="qty-btn minus" onclick="changeQty('${i.name.replace(/'/g,"\\'")}',${i.price},-1)">−</button>
+          <span class="qty-num">${i.qty}</span>
+          <button class="qty-btn plus" onclick="changeQty('${i.name.replace(/'/g,"\\'")}',${i.price},1)">+</button>
+        </div>
+        <div class="cart-row-subtotal">${i.price > 0 ? fmtPrice(i.price * i.qty) : '—'}</div>
+      </div>
+    `).join('');
+  }
+
+  function openCart() {
+    document.getElementById('cartPanel').classList.add('open');
+    const bd = document.getElementById('cartBackdrop');
+    bd.style.opacity = '1'; bd.style.pointerEvents = 'all';
+    document.body.style.overflow = 'hidden';
+    renderCartPanel();
+  }
+
+  function closeCart() {
+    document.getElementById('cartPanel').classList.remove('open');
+    const bd = document.getElementById('cartBackdrop');
+    bd.style.opacity = '0'; bd.style.pointerEvents = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function buildOrderText() {
+    const items = Object.values(cart);
+    const lines = items.map(i => `• ${i.qty}× ${i.name}${i.price > 0 ? ' — ' + fmtPrice(i.price * i.qty) : ''}`).join('\n');
+    const total = items.filter(i => i.price > 0).reduce((s,i) => s + i.price * i.qty, 0);
+    return `Hola, quiero pedir los siguientes recambios Okatent:\n\n${lines}\n\nTotal estimado: ${fmtPrice(total)}\n\nGracias.`;
+  }
+
+  function checkoutWhatsApp() {
+    if (!Object.keys(cart).length) return;
+    const text = encodeURIComponent(buildOrderText());
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+  }
+
+  function checkoutEmail() {
+    if (!Object.keys(cart).length) return;
+    const subject = encodeURIComponent('Pedido recambios Okatent');
+    const body = encodeURIComponent(buildOrderText());
+    window.location.href = `mailto:info@okatent.com?subject=${subject}&body=${body}`;
+  }
+
+  // Init cart buttons (parse onclick to extract name+price without changing HTML)
+  function initCartButtons() {
+    document.querySelectorAll('.product-buy').forEach(btn => {
+      const oc = btn.getAttribute('onclick') || '';
+      const m = oc.match(/addToCart\('([^']+)',\s*([\d.]+)\)/);
+      if (!m) return;
+      const [, name, priceStr] = m;
+      const price = parseFloat(priceStr);
+      btn.dataset.cartName = name;
+      btn.onclick = null;
+      btn.addEventListener('click', () => addToCart(name, price));
+    });
+  }
+
+  // Model selection (Cebú / Borneo)
+  let currentModel = 'cebu';
+  function selectModel(model) {
+    currentModel = model;
+    currentFilter = 'all';
+    document.querySelectorAll('.model-select-card').forEach(c => c.classList.toggle('active', c.dataset.model === model));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+    document.querySelectorAll('.filter-btn[data-models="cebu"]').forEach(b => b.classList.toggle('size-hidden', model !== 'cebu'));
+    document.getElementById('filterM').textContent = model === 'cebu' ? '3×3 / 3×4,5 / 3×6' : '3×3 / 3×4,5';
+    document.getElementById('modelPending').style.display = 'none';
+    applyFilters();
+  }
+
+  // Filters
+  let currentFilter = 'all';
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFilter = btn.dataset.filter;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    });
+  });
+
+  function searchProducts(query) { applyFilters(query.toLowerCase()); }
+
+  function applyFilters(search = '') {
+    const cards = document.querySelectorAll('.product-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const matchModel = card.dataset.model === currentModel;
+      const matchFilter = currentFilter === 'all' || card.dataset.sizes === currentFilter;
+      const matchSearch = !search || card.dataset.name.includes(search);
+      const show = matchModel && matchFilter && matchSearch;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    document.getElementById('resultsCount').textContent = `${visible} pieza${visible !== 1 ? 's' : ''} encontrada${visible !== 1 ? 's' : ''}`;
+    document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  // Init
+  initCartButtons();
+  selectModel('cebu');
+
+  // Page transitions
+  document.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) return;
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.body.style.transition = 'opacity .3s ease';
+      document.body.style.opacity = '0';
+      setTimeout(() => window.location.href = href, 300);
+    });
+  });
+</script>
+
+
+  <!-- SIZE PICKER MODAL -->
+  <div id="spModal" style="display:none; position:fixed; inset:0; z-index:10000; align-items:center; justify-content:center; background:rgba(0,0,0,.45);">
+    <div style="background:#fff; border-radius:18px; padding:28px 24px; width:min(340px,90vw); box-shadow:0 8px 32px rgba(0,0,0,.18);">
+      <div style="font-size:.8rem; color:#7a8599; text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px;" id="spRef"></div>
+      <div style="font-size:1.2rem; font-weight:700; color:#1A2B5C; margin-bottom:18px;" id="spName"></div>
+      <div style="font-size:.9rem; color:#555; margin-bottom:12px;">Elige la medida:</div>
+      <div id="spOptions" style="display:flex; flex-direction:column; gap:10px;"></div>
+      <button onclick="closeSP()" style="margin-top:18px; width:100%; padding:10px; border:1.5px solid #dde3ef; border-radius:8px; background:#fff; color:#555; cursor:pointer; font-size:.9rem;">Cancelar</button>
+    </div>
+  </div>
+</body>
+</html>
