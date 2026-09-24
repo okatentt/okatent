@@ -490,7 +490,7 @@
           <!-- AustralTent -->
           <article class="product-card rv" id="australtent">
             <figure class="grad-aus" style="position:relative">
-              <img src="https://i0.wp.com/okatent.com/wp-content/uploads/2025/11/hangar-reubicable-para-aviones.png?ssl=1" alt="Pabellón AustralTent versátil" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+              <img src="https://i0.wp.com/okatent.com/wp-content/uploads/2025/10/Padium-header.jpg?ssl=1" alt="Pabellón AustralTent versátil" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
               <div class="prod-fig-label"><strong>AustralTent</strong><span>Versátil</span></div>
             </figure>
             <div class="product-body">
@@ -895,11 +895,18 @@
     (function() {
       const vid = document.getElementById('hero-vid');
       if (!vid) return;
-      const tryPlay = () => vid.play().catch(() => {});
+      vid.muted = true;
+      vid.volume = 0;
+      const tryPlay = () => { vid.muted = true; return vid.play().catch(() => {}); };
+      // intentar en varios momentos
       tryPlay();
+      vid.addEventListener('loadedmetadata', tryPlay);
+      vid.addEventListener('canplay', tryPlay);
       document.addEventListener('click', tryPlay, { once: true });
       document.addEventListener('touchstart', tryPlay, { once: true });
-      document.addEventListener('scroll', tryPlay, { once: true });
+      window.addEventListener('focus', tryPlay);
+      setTimeout(tryPlay, 500);
+      setTimeout(tryPlay, 1500);
     })();
 
     // ── Hero: animación de palabras ──
