@@ -216,7 +216,11 @@
       font-size: .85rem; padding: .7rem 1.2rem;
     }
     .float-cta .float-wa:hover { box-shadow: 0 14px 36px -8px rgba(37,211,102,.55); }
-    @media (max-width:600px) { .float-cta { bottom:1rem; right:1rem; } }
+    @media (max-width:600px) {
+      .float-cta { bottom: 5rem; right: .8rem; gap: .4rem; }
+      .float-cta a { font-size: .8rem; padding: .7rem 1rem; }
+      .float-cta .float-wa { font-size: .75rem; padding: .6rem .9rem; }
+    }
 
     /* footer */
     .footer { background: var(--dark); color: #fff; padding-block: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 3vw, 2.5rem); }
@@ -787,8 +791,8 @@
             </div>
           </div>
 
-          <div class="other-card rv">
-            <img src="imgs/cebu-azul-recorte.jpg" alt="Carpas plegables Okatent" loading="lazy" onerror="this.style.display='none'">
+          <div class="other-card rv" style="cursor:pointer" onclick="location.href='okatent-carpas.html'">
+            <img src="https://i0.wp.com/okatent.com/wp-content/uploads/2024/05/cubiertas-para-pistas-de-padel-rpadel-1.png?ssl=1" alt="Carpas plegables Okatent" loading="lazy">
             <div class="other-body">
               <span class="eyebrow">Plegables</span>
               <h3>Carpas plegables</h3>
